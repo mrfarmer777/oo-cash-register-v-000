@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount, :items
+  attr_accessor :total, :discount, :items, :last
 
   def initialize(discount=0)
     @total=0
@@ -8,6 +8,7 @@ class CashRegister
   end
 
   def add_item(title,price,quantity=1)
+    @last=[title,price,quantity]
     quantity.times{
       @items<<title
       @total+=price
@@ -21,6 +22,13 @@ class CashRegister
     else
       "There is no discount to apply."
     end
+  end
+
+  def void_last  
+    @last[2].times{
+      @items.pop
+      @total-=price
+    }
   end
 
 
