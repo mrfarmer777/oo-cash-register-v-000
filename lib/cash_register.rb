@@ -24,7 +24,7 @@ class CashRegister
     end
   end
 
-  def void_last
+  def void_last_transaction
     @last[2].times{
       @items.pop
       @total-=@last[1]
