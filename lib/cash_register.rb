@@ -24,10 +24,10 @@ class CashRegister
     end
   end
 
-  def void_last  
+  def void_last
     @last[2].times{
       @items.pop
-      @total-=price
+      @total-=@last[1]
     }
   end
 
