@@ -12,6 +12,7 @@ class CashRegister
       @items<<title
       total+=price
     }
+  end
 
 
 
