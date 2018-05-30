@@ -15,8 +15,7 @@ class CashRegister
   end
 
   def apply_discount
-    cost=@total-@discounts
-    cost
+    @total-@discount
   end
 
 
